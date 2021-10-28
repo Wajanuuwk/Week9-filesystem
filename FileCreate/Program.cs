@@ -9,7 +9,7 @@ namespace FileCreate
         {
             string rootDirectory = @"C:\Users\opilane\Samples\wishlist";
             Console.WriteLine("Enter file name:");
-            string fileName = "wishList";
+            string fileName = Console.ReadLine();
             string fullfilePath = $@"{rootDirectory}\{fileName}.txt";
 
             bool directoryExists = Directory.Exists(rootDirectory);
@@ -24,6 +24,7 @@ namespace FileCreate
                 Console.WriteLine($"wishlist directory does not exist.");
                 Directory.CreateDirectory(rootDirectory);
                 File.Create(fullfilePath);
+                Console.WriteLine($"File {fileName}.txt has been created.");
             }
             else
             {
